@@ -12,7 +12,6 @@ void setup() {
 void loop() {
   int pinState4 = digitalRead(4);
   int pinState3 = digitalRead(3);
-  Serial.println(pinState3);
   
   if (pinState3 == 0){
     digitalWrite(7, HIGH);}
