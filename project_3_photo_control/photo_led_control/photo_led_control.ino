@@ -1,4 +1,4 @@
-#define PHOTO_PIN 1
+#define PHOTO_PIN A1
 #define LED_PIN 11
 
 void setup() {
@@ -7,11 +7,8 @@ void setup() {
 }
 
 void loop() {
-  while ("TRUE"){
     int photo = analogRead(PHOTO_PIN);
-    int led = map(photo, 0, 1023, 255, 0);
+    int led = abs(map(photo, 0, 1023, 0, 255)-255);
     Serial.println(led);
     analogWrite(LED_PIN, led);
-  }
-
 }
